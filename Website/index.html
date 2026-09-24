@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Laphing Food Centre — Taste of Himalayas | Bhawanipur, Kolkata</title>
+  <meta name="description" content="Laphing Food Centre — Taste of Himalayas. Authentic street food in Bhawanipur, Kolkata. Chicken Tipo, Momos, Lapping, Chowmin, Fried Rice & Combos.">
+
+  <!-- Apple Mobile Meta -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Poppins Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="mobile-first-body">
+
+  <!-- Sticky iOS Floating Header -->
+  <header class="ios-top-bar">
+    <div class="top-bar-inner">
+      <div class="brand-block">
+        <span class="brand-title">Laphing Food Centre</span>
+        <span class="brand-tag">Taste of Himalayas</span>
+      </div>
+
+      <div class="status-pill" id="livePill">
+        <span class="status-dot"></span>
+        <span class="status-label" id="statusText">Open (Till 8 PM)</span>
+      </div>
+
+      <a href="tel:+919832595946" class="top-call-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
+        </svg>
+        <span>Call</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- 1. FULL-SCREEN HERO SECTION (Covers 100% of first screen) -->
+  <section class="fullscreen-hero" id="top">
+    <!-- Edge-to-edge background video -->
+    <div class="hero-video-wrap">
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg">
+        <source src="assets/hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero-gradient-scrim"></div>
+    </div>
+
+    <!-- Centered Mobile Content -->
+    <div class="hero-foreground">
+      
+      <div class="hero-loc-chip">
+        <span class="loc-pin">📍</span>
+        <span>KOLKATA, BHAWANIPUR</span>
+      </div>
+
+      <div class="hero-brand-group">
+        <h1 class="hero-title">LAPHING</h1>
+        <h2 class="hero-subtitle">FOOD CENTRE</h2>
+        <p class="hero-test-quote">“Taste of Himalayas”</p>
+      </div>
+
+      <!-- Chef Badge & Featured Reel Chip -->
+      <div class="hero-chips-wrap">
+        <div class="chef-status-chip">
+          <img src="assets/chef-badge.jpg" alt="Chef" class="chef-badge-img">
+          <div class="chef-badge-info">
+            <span class="chef-role">Master at the Wok</span>
+            <span class="chef-detail">Fresh Street Food Daily</span>
+          </div>
+        </div>
+
+        <a href="https://www.instagram.com/reel/DdUDBaWx7eM/" target="_blank" rel="noopener noreferrer" class="hero-reel-chip">
+          <div class="reel-chip-thumb-wrap">
+            <img src="assets/reel-3-top.jpg" alt="Featured on Instagram" class="reel-chip-img">
+            <span class="reel-chip-play">▶</span>
+          </div>
+          <div class="reel-chip-info">
+            <span class="reel-chip-title">Featured Reel</span>
+            <span class="reel-chip-sub">As Seen On Instagram ↗</span>
+          </div>
+        </a>
+      </div>
+
+      <p class="hero-tagline">“Good Food, Good Mood!” ❤️</p>
+
+      <!-- Primary Action Buttons -->
+      <div class="hero-actions-container">
+        <div class="hero-buttons-row">
+          <a href="tel:+919832595946" class="btn btn-call">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            <span>Call to Order</span>
+          </a>
+          <a href="#menu" class="btn btn-menu-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+            </svg>
+            <span>View Menu</span>
+          </a>
+        </div>
+
+        <a href="https://maps.google.com/?q=4A,+Ashutosh+Mukherjee+Rd,+Gaza+Park,+Bhowanipore,+Kolkata,+West+Bengal+700020" target="_blank" rel="noopener noreferrer" class="btn-directions-hero">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          </svg>
+          <span>Get Directions</span>
+        </a>
+      </div>
+
+      <!-- Quick Timings under CTAs -->
+      <div class="hero-timing-pill">
+        <span>⏱️ 2 PM – 8 PM (Mon–Sat)</span>
+        <span class="sep">•</span>
+        <span>Sunday Closed</span>
+      </div>
+
+    </div>
+
+    <!-- Scroll Down Hint Indicator -->
+    <a href="#menu" class="hero-scroll-cue" aria-label="Scroll to menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M6 9l6 6 6-6"/>
+      </svg>
+    </a>
+  </section>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="page-content">
+
+    <!-- 2. MENU SECTION (iOS Grouped Style - Clean, Consistent, No Loud Rows) -->
+    <section class="content-section" id="menu">
+      <div class="section-header">
+        <span class="section-kicker">AUTHENTIC MENU</span>
+        <h2 class="section-heading">Menu</h2>
+      </div>
+
+      <div class="ios-menu-card">
+        
+        <!-- 1. Chicken Momo -->
+        <div class="menu-item-row">
+          <div class="item-left">
+            <span class="item-num">1</span>
+            <div class="item-text">
+              <span class="item-name">Chicken Momo</span>
+              <span class="item-portion">(6 PC)</span>
+            </div>
+          </div>
+          <div class="item-right">
+            <span class="price-bubble">Rs. 50</span>
+          </div>
+        </div>
+
+        <!-- 2. Veg Momo -->
+        <div class="menu-item-row">
+          <div class="item-left">
+            <span class="item-num">2</span>
+            <div class="item-text">
+              <span class="item-name">Veg Momo</span>
+              <span class="item-portion">(8 PC)</span>
+            </div>
+          </div>
+          <div class="item-right">
+            <span class="price-bubble">Rs. 60</span>
+          </div>
+        </div>
+
+        <!-- 3. Tipo (Signature) -->
+        <div class="menu-item-row">
+          <div class="item-left">
+            <span class="item-num">3</span>
+            <div class="item-text">
+              <div class="name-with-tag">
+                <span class="item-name">Tipo</span>
+                <span class="signature-tag">Signature</span>
+              </div>
+              <span class="item-portion">(1 PC) • Stuffed chicken & whole boiled egg</span>
+            </div>
+          </div>
+          <div class="item-right">
+            <span class="price-bubble">Rs. 50</span>
+          </div>
+        </div>
+
+        <!-- 4. Chowmin -->
+        <div class="menu-item-row">
+          <div class="item-left">
+            <span class="item-num">4</span>
+            <div class="item-text">
+              <span class="item-name">Chowmin</span>
+              <span class="item-portion">(Veg, Egg and Non-Veg)</span>
+            </div>
+          </div>
+          <div class="item-right">
+            <span class="price-bubble">Rs. 50 / 60 / 70</span>
+          </div>
+        </div>
+
+        <!-- 5. Fried Rice -->
+        <div class="menu-item-row">
+          <div class="item-left">
+            <span class="item-num">5</span>
+            <div class="item-text">
+              <span class="item-name">Fried Rice</span>
+              <span class="item-portion">(Veg, Egg and Non-Veg)</span>
+            </div>
+          </div>
+          <div class="item-right">
+            <span class="price-bubble">Rs. 50 / 60 / 70</span>
+          </div>
+        </div>
+
+        <!-- 6. Lapping -->
+        <div class="menu-item-row">
+          <div class="item-left">
+            <span class="item-num">6</span>
+            <div class="item-text">
+              <span class="item-name">Lapping</span>
+              <span class="item-portion">(Both Spicy and Sweet Sauce)</span>
+            </div>
+          </div>
+          <div class="item-right">
+            <span class="price-bubble">Rs. 60</span>
+          </div>
+        </div>
+
+        <!-- 7. Veg Combo -->
+        <div class="menu-item-row">
+          <div class="item-left">
+            <span class="item-num">7</span>
+            <div class="item-text">
+              <span class="item-name">Veg Combo</span>
+              <span class="item-portion">(Veg Fried Rice or Veg Chowmin + Veg Ball Manchurian + Kimchi Salad)</span>
+            </div>
+          </div>
+          <div class="item-right">
+            <span class="price-bubble">Rs. 80</span>
+          </div>
+        </div>
+
+        <!-- 8. Non-Veg Combo -->
+        <div class="menu-item-row">
+          <div class="item-left">
+            <span class="item-num">8</span>
+            <div class="item-text">
+              <span class="item-name">Non-Veg Combo</span>
+              <span class="item-portion">(Egg Chowmin or Fried Rice + Chilli Chicken (3 PC) + Kimchi Salad)</span>
+            </div>
+          </div>
+          <div class="item-right">
+            <span class="price-bubble">Rs. 90</span>
+          </div>
+        </div>
+
+        <!-- 9. Jhol Momo -->
+        <div class="menu-item-row">
+          <div class="item-left">
+            <span class="item-num">9</span>
+            <div class="item-text">
+              <span class="item-name">Jhol Momo</span>
+              <span class="item-portion">(6 PC)</span>
+            </div>
+          </div>
+          <div class="item-right">
+            <span class="price-bubble">Rs. 80</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. AS SEEN ON INSTAGRAM -->
+    <section class="content-section" id="reels">
+      <div class="section-header">
+        <span class="section-kicker">FEATURED CLIPS</span>
+        <h2 class="section-heading">As Seen On Instagram</h2>
+      </div>
+
+      <div class="reels-slider">
+        <!-- Reel 1 -->
+        <a href="https://www.instagram.com/reel/DcnKVcABbsy/" target="_blank" rel="noopener noreferrer" class="ios-reel-box">
+          <div class="reel-media">
+            <img src="assets/reel-1-thumb.jpg" alt="Instagram Reel 1" class="reel-cover">
+            <div class="play-overlay">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#FFFFFF">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <span class="app-chip">Instagram</span>
+          </div>
+          <div class="reel-meta">
+            <span class="reel-tag">Featured Clip 1</span>
+            <h3 class="reel-title">Street Food Feature</h3>
+            <span class="reel-action">Watch Reel ↗</span>
+          </div>
+        </a>
+
+        <!-- Reel 2 -->
+        <a href="https://www.instagram.com/reel/DcbZgmVTy4K/" target="_blank" rel="noopener noreferrer" class="ios-reel-box">
+          <div class="reel-media">
+            <img src="assets/reel-2-thumb.jpg" alt="Instagram Reel 2" class="reel-cover">
+            <div class="play-overlay">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#FFFFFF">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <span class="app-chip">Instagram</span>
+          </div>
+          <div class="reel-meta">
+            <span class="reel-tag">Featured Clip 2</span>
+            <h3 class="reel-title">Wok Toss & Cooking</h3>
+            <span class="reel-action">Watch Reel ↗</span>
+          </div>
+        </a>
+
+        <!-- Reel 3 -->
+        <a href="https://www.instagram.com/reel/DdUDBaWx7eM/" target="_blank" rel="noopener noreferrer" class="ios-reel-box">
+          <div class="reel-media">
+            <img src="assets/reel-3-top.jpg" alt="Instagram Reel 3" class="reel-cover reel-cover-top">
+            <div class="play-overlay">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#FFFFFF">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <span class="app-chip">Instagram</span>
+          </div>
+          <div class="reel-meta">
+            <span class="reel-tag">Featured Clip 3</span>
+            <h3 class="reel-title">Bhawanipur Stall Review</h3>
+            <span class="reel-action">Watch Reel ↗</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 4. TIMING & LOCATION -->
+    <section class="content-section" id="visit">
+      <div class="section-header">
+        <span class="section-kicker">VISIT US</span>
+        <h2 class="section-heading">Timing & Location</h2>
+      </div>
+
+      <div class="info-cards-stack">
+        
+        <!-- Timing Card -->
+        <div class="ios-info-card">
+          <div class="card-head">
+            <span class="head-icon">⏱️</span>
+            <span class="head-label">HOURS</span>
+          </div>
+          <h3 class="card-headline">Timing</h3>
+          <div class="hours-list">
+            <div class="hours-row">
+              <span class="day-col">Monday to Saturday</span>
+              <span class="time-col">2 PM to 8 PM</span>
+            </div>
+            <div class="hours-row closed-day">
+              <span class="day-col">Sunday</span>
+              <span class="closed-pill">Closed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location Card -->
+        <div class="ios-info-card">
+          <div class="card-head">
+            <span class="head-icon">📍</span>
+            <span class="head-label">LOCATION</span>
+          </div>
+          <h3 class="card-headline">Location</h3>
+          <p class="address-text">
+            <strong>Laphing Food Centre</strong><br>
+            <em>Test of Himalayas</em><br>
+            4A, Ashutosh Mukherjee Rd, Gaza Park,<br>
+            Bhawanipur, Kolkata, West Bengal 700020
+          </p>
+          <span class="metro-landmark">🚇 Near Netaji Bhawan Metro</span>
+        </div>
+
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div class="bottom-actions-row">
+        <a href="tel:+919832595946" class="btn-action btn-phone">
+          📞 Call: 98325 95946
+        </a>
+        <a href="https://wa.me/919832595946?text=Hi%20Laphing%20Food%20Centre,%20I%20would%20like%20to%20order" target="_blank" rel="noopener noreferrer" class="btn-action btn-wa">
+          💬 WhatsApp
+        </a>
+        <a href="https://maps.google.com/?q=4A,+Ashutosh+Mukherjee+Rd,+Gaza+Park,+Bhowanipore,+Kolkata,+West+Bengal+700020" target="_blank" rel="noopener noreferrer" class="btn-action btn-directions">
+          🗺️ Get Directions
+        </a>
+      </div>
+
+      <p class="alt-contact-note">
+        Alternate Number: <a href="tel:+919382595946">+91 93825 95946</a>
+      </p>
+
+    </section>
+
+  </main>
+
+  <!-- iOS Minimal Footer -->
+  <footer class="ios-page-footer">
+    <div class="footer-wrap">
+      <h3 class="footer-title">Laphing Food Centre</h3>
+      <p class="footer-sub">“Taste of Himalayas”</p>
+      <p class="footer-mood">“Good Food, Good Mood!” ❤️</p>
+      <p class="footer-city">Kolkata, Bhawanipur</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

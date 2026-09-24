@@ -1,0 +1,983 @@
+/* ==========================================================================
+   Laphing Food Centre — Mobile-First iOS Style System
+   Typography: Poppins throughout the entire website
+   ========================================================================== */
+
+:root {
+  /* Color Palette */
+  --bg-black: #000000;
+  --card-dark: #1C1C1E;
+  --card-dark-glass: rgba(28, 28, 30, 0.82);
+  --separator: rgba(255, 255, 255, 0.08);
+  --hover-overlay: rgba(255, 255, 255, 0.04);
+  
+  /* Accents */
+  --ios-red: #FF3B30;
+  --ios-red-hover: #E0352B;
+  --ios-gold: #FFD60A;
+  --ios-green: #34C759;
+  --ios-blue: #0A84FF;
+  
+  /* Text */
+  --text-primary: #FFFFFF;
+  --text-secondary: #8E8E93;
+  --text-muted: #636366;
+  
+  /* Typography - Poppins throughout */
+  --font-main: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Border Radii */
+  --radius-card: 20px;
+  --radius-btn: 14px;
+  --radius-pill: 9999px;
+  --radius-sm: 8px;
+
+  /* Glassmorphism */
+  --glass-blur: blur(24px) saturate(180%);
+  --ios-border: 1px solid rgba(255, 255, 255, 0.1);
+  --ios-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+  background-color: var(--bg-black);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+}
+
+body.mobile-first-body {
+  font-family: var(--font-main);
+  background-color: var(--bg-black);
+  color: var(--text-primary);
+  line-height: 1.45;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   Floating iOS Top Bar
+   ========================================================================== */
+.ios-top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 0.5px solid var(--separator);
+  padding: 0.65rem 1rem;
+}
+
+.top-bar-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.brand-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.15;
+}
+
+.brand-tag {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--ios-gold);
+}
+
+.status-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.28rem 0.65rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 600;
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+}
+
+.status-dot {
+  width: 6.5px;
+  height: 6.5px;
+  border-radius: 50%;
+  background-color: var(--ios-green);
+  box-shadow: 0 0 6px var(--ios-green);
+}
+
+.status-dot.closed {
+  background-color: var(--ios-red);
+  box-shadow: 0 0 6px var(--ios-red);
+}
+
+.top-call-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--ios-red);
+  color: #FFFFFF;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 700;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.top-call-btn:active {
+  transform: scale(0.95);
+  background: var(--ios-red-hover);
+}
+
+/* ==========================================================================
+   1. FULL-SCREEN HERO (100% of First Screen)
+   ========================================================================== */
+.fullscreen-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 0;
+  padding: 4.5rem 1.25rem 2.5rem;
+  box-sizing: border-box;
+}
+
+.hero-video-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-gradient-scrim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.6) 45%,
+    rgba(0, 0, 0, 0.92) 100%
+  );
+}
+
+.hero-foreground {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-loc-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.28rem 0.8rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ios-gold);
+  border: 1px solid rgba(255, 214, 10, 0.3);
+  margin-bottom: 0.85rem;
+}
+
+.hero-brand-group {
+  margin-bottom: 0.85rem;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 11vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  line-height: 0.95;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.2rem, 5vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--ios-gold);
+  line-height: 1.1;
+  margin-top: 0.2rem;
+}
+
+.hero-test-quote {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-top: 0.35rem;
+}
+
+/* Hero Chips Wrapper (Chef + Featured Reel) */
+.hero-chips-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+  width: 100%;
+}
+
+@media (min-width: 440px) {
+  .hero-chips-wrap {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.65rem;
+  }
+}
+
+.chef-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.32rem 0.9rem 0.32rem 0.4rem;
+  border-radius: var(--radius-pill);
+}
+
+.chef-badge-img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--ios-gold);
+}
+
+.chef-badge-info {
+  text-align: left;
+}
+
+.chef-role {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.chef-detail {
+  display: block;
+  font-size: 0.66rem;
+  color: var(--ios-gold);
+}
+
+/* Featured Reel Chip in Hero */
+.hero-reel-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.32rem 0.9rem 0.32rem 0.4rem;
+  border-radius: var(--radius-pill);
+  transition: transform 0.15s ease, background 0.15s ease;
+  cursor: pointer;
+}
+
+.hero-reel-chip:active {
+  transform: scale(0.96);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.reel-chip-thumb-wrap {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1.5px solid var(--ios-red);
+  flex-shrink: 0;
+}
+
+.reel-chip-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.reel-chip-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.55rem;
+  color: #FFFFFF;
+  background: rgba(255, 59, 48, 0.9);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reel-chip-info {
+  text-align: left;
+}
+
+.reel-chip-title {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.reel-chip-sub {
+  display: block;
+  font-size: 0.66rem;
+  color: var(--ios-gold);
+}
+
+.reel-cover-top {
+  object-position: top center;
+}
+
+.hero-tagline {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
+}
+
+/* Hero Action Buttons (Side-by-side + Directions centered below) */
+.hero-actions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  width: 100%;
+  max-width: 440px;
+  margin-bottom: 0.95rem;
+}
+
+.hero-buttons-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  width: 100%;
+}
+
+.hero-buttons-row .btn {
+  flex: 1;
+  padding: 0.8rem 0.6rem;
+  font-size: 0.86rem;
+  white-space: nowrap;
+}
+
+.btn-directions-hero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  background: rgba(10, 132, 255, 0.22);
+  border: 1px solid rgba(10, 132, 255, 0.45);
+  color: #64D2FF;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 600;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.15s ease, background 0.15s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.btn-directions-hero:active {
+  transform: scale(0.96);
+  background: rgba(10, 132, 255, 0.35);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border-radius: var(--radius-btn);
+  font-weight: 700;
+  transition: transform 0.15s ease, background 0.15s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-call {
+  background-color: var(--ios-red);
+  color: #FFFFFF;
+}
+
+.btn-call:active {
+  background-color: var(--ios-red-hover);
+}
+
+.btn-menu-link {
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-menu-link:active {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.hero-timing-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.hero-timing-pill .sep {
+  color: var(--ios-gold);
+}
+
+/* Scroll indicator */
+.hero-scroll-cue {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  color: rgba(255, 255, 255, 0.6);
+  animation: bounceDown 2s infinite;
+  padding: 0.4rem;
+}
+
+@keyframes bounceDown {
+  0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+  40% { transform: translate(-50%, 6px); }
+  60% { transform: translate(-50%, 3px); }
+}
+
+/* ==========================================================================
+   Page Content & Layout
+   ========================================================================== */
+.page-content {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2.2rem 1rem 1rem;
+}
+
+.content-section {
+  margin-bottom: 2.5rem;
+}
+
+.section-header {
+  margin-bottom: 0.85rem;
+  padding: 0 0.4rem;
+}
+
+.section-kicker {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  margin-bottom: 0.15rem;
+}
+
+.section-heading {
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   2. iOS Menu List (Zero Filler, Clean & Consistent)
+   ========================================================================== */
+.ios-menu-card {
+  background: var(--card-dark);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: var(--ios-border);
+  box-shadow: var(--ios-shadow);
+}
+
+.menu-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  padding: 0.95rem 1.15rem;
+  border-bottom: 0.5px solid var(--separator);
+  transition: background 0.15s ease;
+}
+
+.menu-item-row:last-child {
+  border-bottom: none;
+}
+
+.menu-item-row:active {
+  background-color: var(--hover-overlay);
+}
+
+.item-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.item-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.item-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.name-with-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.item-name {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+/* Subtle, Tasteful Signature Tag */
+.signature-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  background: rgba(255, 214, 10, 0.15);
+  color: var(--ios-gold);
+  border: 1px solid rgba(255, 214, 10, 0.3);
+  padding: 0.1rem 0.45rem;
+  border-radius: var(--radius-pill);
+}
+
+.item-portion {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-top: 0.15rem;
+  line-height: 1.35;
+}
+
+.item-right {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.price-bubble {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-pill);
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   3. Instagram Reels Slider / Stack
+   ========================================================================== */
+.reels-slider {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+
+.ios-reel-box {
+  background: var(--card-dark);
+  border-radius: 16px;
+  overflow: hidden;
+  border: var(--ios-border);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease;
+}
+
+.ios-reel-box:active {
+  transform: scale(0.98);
+}
+
+.reel-media {
+  position: relative;
+  height: 180px;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.reel-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 59, 48, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+}
+
+.app-chip {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.22rem 0.55rem;
+  border-radius: var(--radius-pill);
+}
+
+.reel-meta {
+  padding: 0.85rem 1rem;
+}
+
+.reel-tag {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--ios-gold);
+  text-transform: uppercase;
+}
+
+.reel-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 0.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.reel-action {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ios-blue);
+}
+
+/* ==========================================================================
+   4. Timing & Location Cards
+   ========================================================================== */
+.info-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.ios-info-card {
+  background: var(--card-dark);
+  border-radius: var(--radius-card);
+  padding: 1.25rem 1.15rem;
+  border: var(--ios-border);
+  box-shadow: var(--ios-shadow);
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.head-icon {
+  font-size: 1.3rem;
+}
+
+.head-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.card-headline {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.65rem;
+}
+
+.hours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.day-col {
+  color: var(--text-secondary);
+}
+
+.time-col {
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.closed-day .closed-pill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #FF8A80;
+  background: rgba(255, 59, 48, 0.15);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-pill);
+}
+
+.address-text {
+  font-size: 0.9rem;
+  color: #E0E0E0;
+  line-height: 1.45;
+  margin-bottom: 0.65rem;
+}
+
+.address-text em {
+  color: var(--ios-gold);
+}
+
+.metro-landmark {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(10, 132, 255, 0.15);
+  color: #64D2FF;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-pill);
+}
+
+/* Quick Action Buttons */
+.bottom-actions-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.btn-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.15rem;
+  border-radius: var(--radius-btn);
+  font-size: 0.92rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.15s ease;
+}
+
+.btn-action:active {
+  transform: scale(0.97);
+}
+
+.btn-phone {
+  background: var(--ios-red);
+  color: #FFFFFF;
+}
+
+.btn-wa {
+  background: #34C759;
+  color: #FFFFFF;
+}
+
+.btn-directions {
+  background: var(--ios-blue);
+  color: #FFFFFF;
+}
+
+.alt-contact-note {
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.alt-contact-note a {
+  color: var(--ios-gold);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.ios-page-footer {
+  border-top: 0.5px solid var(--separator);
+  padding: 2rem 1rem 1.5rem;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.footer-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.footer-sub {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ios-gold);
+  margin-top: 0.2rem;
+}
+
+.footer-mood {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-top: 0.4rem;
+}
+
+.footer-city {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin-top: 0.2rem;
+}
+
+/* ==========================================================================
+   Responsive Scaling (Tablet & Desktop)
+   ========================================================================== */
+@media (min-width: 580px) {
+  .hero-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btn {
+    flex: 1;
+  }
+
+  .reels-slider {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .info-cards-stack {
+    flex-direction: row;
+  }
+
+  .ios-info-card {
+    flex: 1;
+  }
+
+  .bottom-actions-row {
+    flex-direction: row;
+  }
+
+  .btn-action {
+    flex: 1;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
+  .hero-video-wrap {
+    background: url('assets/hero-poster.jpg') center/cover no-repeat;
+  }
+  .hero-scroll-cue {
+    animation: none;
+  }
+}
