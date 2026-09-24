@@ -276,7 +276,7 @@
       </div>
     </section>
 
-    <!-- 3. AS SEEN ON INSTAGRAM -->
+    <!-- 3. AS SEEN ON INSTAGRAM (FULL INSTA REEL VIDEO PLAYERS) -->
     <section class="content-section" id="reels">
       <div class="section-header">
         <span class="section-kicker">FEATURED CLIPS</span>
@@ -284,59 +284,197 @@
       </div>
 
       <div class="reels-slider">
-        <!-- Reel 1 -->
-        <a href="https://www.instagram.com/reel/DcnKVcABbsy/" target="_blank" rel="noopener noreferrer" class="ios-reel-box">
-          <div class="reel-media">
-            <img src="assets/reel-1-thumb.jpg" alt="Instagram Reel 1" class="reel-cover">
-            <div class="play-overlay">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="#FFFFFF">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </div>
-            <span class="app-chip">Instagram</span>
-          </div>
-          <div class="reel-meta">
-            <span class="reel-tag">Featured Clip 1</span>
-            <h3 class="reel-title">Street Food Feature</h3>
-            <span class="reel-action">Watch Reel ↗</span>
-          </div>
-        </a>
+        <!-- Reel 1 Player -->
+        <div class="insta-reel-card" data-reel-id="1">
+          <div class="insta-video-wrapper">
+            <video class="insta-reel-video" loop muted playsinline preload="metadata" poster="assets/reel1-poster.jpg">
+              <source src="assets/reel1.mp4" type="video/mp4">
+            </video>
+            
+            <!-- Tap to pause/play overlay -->
+            <div class="insta-tap-zone" aria-label="Tap to play or pause"></div>
 
-        <!-- Reel 2 -->
-        <a href="https://www.instagram.com/reel/DcbZgmVTy4K/" target="_blank" rel="noopener noreferrer" class="ios-reel-box">
-          <div class="reel-media">
-            <img src="assets/reel-2-thumb.jpg" alt="Instagram Reel 2" class="reel-cover">
-            <div class="play-overlay">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="#FFFFFF">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
+            <!-- Animated Play/Pause Feedback Icon -->
+            <div class="insta-pop-icon">
+              <svg class="pop-play" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="pop-pause" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
             </div>
-            <span class="app-chip">Instagram</span>
-          </div>
-          <div class="reel-meta">
-            <span class="reel-tag">Featured Clip 2</span>
-            <h3 class="reel-title">Wok Toss & Cooking</h3>
-            <span class="reel-action">Watch Reel ↗</span>
-          </div>
-        </a>
 
-        <!-- Reel 3 -->
-        <a href="https://www.instagram.com/reel/DdUDBaWx7eM/" target="_blank" rel="noopener noreferrer" class="ios-reel-box">
-          <div class="reel-media">
-            <img src="assets/reel-3-top.jpg" alt="Instagram Reel 3" class="reel-cover reel-cover-top">
-            <div class="play-overlay">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="#FFFFFF">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
+            <!-- Top Header in Reel: Instagram Badge + Sound Toggle Button -->
+            <div class="insta-reel-topbar">
+              <span class="insta-logo-pill">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                Reel 1
+              </span>
+
+              <!-- Sound Toggle Button -->
+              <button class="insta-mute-btn is-muted" aria-label="Toggle Mute" type="button">
+                <!-- Icon Muted -->
+                <svg class="icon-muted" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                  <line x1="23" y1="9" x2="17" y2="15"/>
+                  <line x1="17" y1="9" x2="23" y2="15"/>
+                </svg>
+                <!-- Icon Unmuted -->
+                <svg class="icon-unmuted" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                </svg>
+              </button>
             </div>
-            <span class="app-chip">Instagram</span>
+
+            <!-- Bottom Information Overlay -->
+            <div class="insta-reel-bottom">
+              <div class="insta-author-row">
+                <img src="assets/chef-badge.jpg" alt="Laphing Food Centre" class="insta-avatar">
+                <span class="insta-username">laphingfoodcentre</span>
+              </div>
+              <p class="insta-caption">Viral Street Food Feature in Bhawanipur • Steaming Momos & Chicken Tipo</p>
+              <div class="insta-audio-row">
+                <span class="audio-note">🎵 Original Audio</span>
+                <a href="https://www.instagram.com/reel/DcnKVcABbsy/" target="_blank" rel="noopener noreferrer" class="insta-ext-link">
+                  Open on Instagram ↗
+                </a>
+              </div>
+            </div>
+
+            <!-- Playback Progress Bar -->
+            <div class="insta-progress-track">
+              <div class="insta-progress-fill"></div>
+            </div>
           </div>
-          <div class="reel-meta">
-            <span class="reel-tag">Featured Clip 3</span>
-            <h3 class="reel-title">Bhawanipur Stall Review</h3>
-            <span class="reel-action">Watch Reel ↗</span>
+        </div>
+
+        <!-- Reel 2 Player -->
+        <div class="insta-reel-card" data-reel-id="2">
+          <div class="insta-video-wrapper">
+            <video class="insta-reel-video" loop muted playsinline preload="metadata" poster="assets/reel2-poster.jpg">
+              <source src="assets/reel2.mp4" type="video/mp4">
+            </video>
+            
+            <!-- Tap to pause/play overlay -->
+            <div class="insta-tap-zone" aria-label="Tap to play or pause"></div>
+
+            <!-- Animated Play/Pause Feedback Icon -->
+            <div class="insta-pop-icon">
+              <svg class="pop-play" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="pop-pause" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </div>
+
+            <!-- Top Header in Reel: Instagram Badge + Sound Toggle Button -->
+            <div class="insta-reel-topbar">
+              <span class="insta-logo-pill">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                Reel 2
+              </span>
+
+              <!-- Sound Toggle Button -->
+              <button class="insta-mute-btn is-muted" aria-label="Toggle Mute" type="button">
+                <!-- Icon Muted -->
+                <svg class="icon-muted" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                  <line x1="23" y1="9" x2="17" y2="15"/>
+                  <line x1="17" y1="9" x2="23" y2="15"/>
+                </svg>
+                <!-- Icon Unmuted -->
+                <svg class="icon-unmuted" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Bottom Information Overlay -->
+            <div class="insta-reel-bottom">
+              <div class="insta-author-row">
+                <img src="assets/chef-badge.jpg" alt="Laphing Food Centre" class="insta-avatar">
+                <span class="insta-username">laphingfoodcentre</span>
+              </div>
+              <p class="insta-caption">Live Wok Tossed Chowmin & Authentic Himalayan Spices on High Fire</p>
+              <div class="insta-audio-row">
+                <span class="audio-note">🎵 Original Audio</span>
+                <a href="https://www.instagram.com/reel/DcbZgmVTy4K/" target="_blank" rel="noopener noreferrer" class="insta-ext-link">
+                  Open on Instagram ↗
+                </a>
+              </div>
+            </div>
+
+            <!-- Playback Progress Bar -->
+            <div class="insta-progress-track">
+              <div class="insta-progress-fill"></div>
+            </div>
           </div>
-        </a>
+        </div>
+
+        <!-- Reel 3 Player -->
+        <div class="insta-reel-card" data-reel-id="3">
+          <div class="insta-video-wrapper">
+            <video class="insta-reel-video" loop muted playsinline preload="metadata" poster="assets/reel3-poster.jpg">
+              <source src="assets/reel3.mp4" type="video/mp4">
+            </video>
+            
+            <!-- Tap to pause/play overlay -->
+            <div class="insta-tap-zone" aria-label="Tap to play or pause"></div>
+
+            <!-- Animated Play/Pause Feedback Icon -->
+            <div class="insta-pop-icon">
+              <svg class="pop-play" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="pop-pause" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </div>
+
+            <!-- Top Header in Reel: Instagram Badge + Sound Toggle Button -->
+            <div class="insta-reel-topbar">
+              <span class="insta-logo-pill">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                Reel 3
+              </span>
+
+              <!-- Sound Toggle Button -->
+              <button class="insta-mute-btn is-muted" aria-label="Toggle Mute" type="button">
+                <!-- Icon Muted -->
+                <svg class="icon-muted" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                  <line x1="23" y1="9" x2="17" y2="15"/>
+                  <line x1="17" y1="9" x2="23" y2="15"/>
+                </svg>
+                <!-- Icon Unmuted -->
+                <svg class="icon-unmuted" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Bottom Information Overlay -->
+            <div class="insta-reel-bottom">
+              <div class="insta-author-row">
+                <img src="assets/chef-badge.jpg" alt="Laphing Food Centre" class="insta-avatar">
+                <span class="insta-username">laphingfoodcentre</span>
+              </div>
+              <p class="insta-caption">Bhawanipur Stall Review & Viral Tibetan Rolled Laphing</p>
+              <div class="insta-audio-row">
+                <span class="audio-note">🎵 Original Audio</span>
+                <a href="https://www.instagram.com/reel/DdUDBaWx7eM/" target="_blank" rel="noopener noreferrer" class="insta-ext-link">
+                  Open on Instagram ↗
+                </a>
+              </div>
+            </div>
+
+            <!-- Playback Progress Bar -->
+            <div class="insta-progress-track">
+              <div class="insta-progress-fill"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

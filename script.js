@@ -1,12 +1,13 @@
 /**
  * Laphing Food Centre — Mobile-First Script
- * "Test of Himalayas" • Bhawanipur, Kolkata
+ * "Taste of Himalayas" • Bhawanipur, Kolkata
  * Hours: Monday to Saturday, 2:00 PM – 8:00 PM (Closed Sunday)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initLiveHoursStatus();
   initHeroVideoOptimization();
+  initInstaReelPlayers();
   initSmoothScroll();
 });
 
@@ -58,7 +59,7 @@ function initLiveHoursStatus() {
 }
 
 /**
- * Ensures video plays smoothly and handles battery-saver restrictions
+ * Ensures hero video plays smoothly
  */
 function initHeroVideoOptimization() {
   const video = document.querySelector('.hero-video');
@@ -66,11 +67,120 @@ function initHeroVideoOptimization() {
 
   const playPromise = video.play();
   if (playPromise !== undefined) {
-    playPromise.catch(() => {
-      // Autoplay blocked by device power saving mode; poster is shown automatically
-    });
+    playPromise.catch(() => {});
   }
   video.muted = true;
+}
+
+/**
+ * Full Instagram Video Player Controller
+ * - Autoplay muted when scrolled into viewport
+ * - Tap anywhere on video to play / pause with pop animation
+ * - Unmute / mute button with auto-muting other clips
+ * - Scrubbing progress bar
+ */
+function initInstaReelPlayers() {
+  const cards = document.querySelectorAll('.insta-reel-card');
+  if (!cards.length) return;
+
+  const allPlayers = [];
+
+  cards.forEach(card => {
+    const video = card.querySelector('.insta-reel-video');
+    const tapZone = card.querySelector('.insta-tap-zone');
+    const popIcon = card.querySelector('.insta-pop-icon');
+    const muteBtn = card.querySelector('.insta-mute-btn');
+    const progressFill = card.querySelector('.insta-progress-fill');
+
+    if (!video) return;
+    allPlayers.push({ video, muteBtn, card });
+
+    // Ensure muted start for policy compliance
+    video.muted = true;
+
+    // Real-time progress bar tracking
+    video.addEventListener('timeupdate', () => {
+      if (video.duration && progressFill) {
+        const pct = (video.currentTime / video.duration) * 100;
+        progressFill.style.width = pct + '%';
+      }
+    });
+
+    // Tap to Pause / Play
+    if (tapZone) {
+      tapZone.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (video.paused) {
+          video.play().then(() => {
+            card.classList.remove('is-paused');
+            showFeedback('show-play');
+          }).catch(() => {});
+        } else {
+          video.pause();
+          card.classList.add('is-paused');
+          showFeedback('show-pause');
+        }
+      });
+    }
+
+    function showFeedback(cls) {
+      if (!popIcon) return;
+      popIcon.classList.remove('show-play', 'show-pause');
+      void popIcon.offsetWidth; // trigger reflow
+      popIcon.classList.add(cls);
+      setTimeout(() => {
+        popIcon.classList.remove(cls);
+      }, 550);
+    }
+
+    // Mute / Unmute Button
+    if (muteBtn) {
+      muteBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const currentlyMuted = video.muted;
+
+        if (currentlyMuted) {
+          // Unmute this video
+          video.muted = false;
+          muteBtn.classList.remove('is-muted');
+
+          // Mute all other playing videos
+          allPlayers.forEach(item => {
+            if (item.video !== video) {
+              item.video.muted = true;
+              if (item.muteBtn) item.muteBtn.classList.add('is-muted');
+            }
+          });
+        } else {
+          // Mute this video
+          video.muted = true;
+          muteBtn.classList.add('is-muted');
+        }
+      });
+    }
+  });
+
+  // IntersectionObserver to auto-play when in viewport and pause when scrolled away
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target.querySelector('.insta-reel-video');
+        const card = entry.target;
+        if (!video) return;
+
+        if (entry.isIntersecting) {
+          // Autoplay if not manually paused by user tap
+          if (!card.classList.contains('is-paused')) {
+            video.play().catch(() => {});
+          }
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.35 });
+
+    cards.forEach(card => observer.observe(card));
+  }
 }
 
 /**
