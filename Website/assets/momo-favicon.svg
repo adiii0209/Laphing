@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="momoGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFDF7"/>
+      <stop offset="100%" stop-color="#FCEFD2"/>
+    </linearGradient>
+    <linearGradient id="steamGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#FF3B30" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FFD60A" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background Circle for crisp tab contrast -->
+  <circle cx="32" cy="32" r="30" fill="#0A0A0A" stroke="#FFD60A" stroke-width="2"/>
+
+  <!-- Steam curls rising -->
+  <path d="M26 18 C24 14 27 12 25 8" fill="none" stroke="url(#steamGrad)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M32 17 C30 13 34 11 32 6" fill="none" stroke="url(#steamGrad)" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M38 18 C36 14 39 12 37 8" fill="none" stroke="url(#steamGrad)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Momo / Dumpling Body -->
+  <g filter="url(#shadow)">
+    <!-- Base Dumpling Shape -->
+    <path d="M14 41 C14 51 22 55 32 55 C42 55 50 51 50 41 C50 33 42 27 32 27 C22 27 14 33 14 41 Z" fill="url(#momoGrad)" stroke="#5A472A" stroke-width="1.5" stroke-linejoin="round"/>
+    
+    <!-- Top Pinch / Pleats Knot -->
+    <path d="M28 27 C30 24 34 24 36 27 C34 28 30 28 28 27 Z" fill="#F0DEB4" stroke="#5A472A" stroke-width="1.2"/>
+
+    <!-- Pleat / Crease Lines -->
+    <path d="M32 27 Q32 41 32 53" fill="none" stroke="#D8C398" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M30 27 Q24 36 21 48" fill="none" stroke="#D8C398" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="M34 27 Q40 36 43 48" fill="none" stroke="#D8C398" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="M28 28 Q18 37 16 43" fill="none" stroke="#D8C398" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M36 28 Q46 37 48 43" fill="none" stroke="#D8C398" stroke-width="1.2" stroke-linecap="round"/>
+
+    <!-- Cute Red Chili Garnish / Dip Dot on top -->
+    <circle cx="32" cy="26" r="2.2" fill="#FF3B30"/>
+  </g>
+</svg>
